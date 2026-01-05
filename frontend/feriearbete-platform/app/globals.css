@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-heading);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 6px);
+  --radius-3xl: calc(var(--radius) + 8px);
+  --radius-4xl: calc(var(--radius) + 10px);
+  
+  /* Semantic Alert Colors */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-orange: var(--orange);
+  --color-orange-foreground: var(--orange-foreground);
+  --color-coral: var(--coral);
+  --color-coral-foreground: var(--coral-foreground);
+  
+  /* Brand Colors */
+  --color-tiffany: oklch(0.68 0.12 190);
+  --color-tiffany-foreground: oklch(1 0 0);
+  --color-purple-light: oklch(0.95 0.03 290);
+  --color-purple-light-foreground: oklch(0.48 0.16 290);
+  --color-purple-dark: oklch(0.22 0.08 290);
+  --color-purple-dark-foreground: oklch(1 0 0);
+  --color-tiffany-light: oklch(0.95 0.04 190);
+  --color-tiffany-light-foreground: oklch(0.55 0.12 190);
+  --color-coral: oklch(0.65 0.16 25);
+  --color-coral-foreground: oklch(1 0 0);
+  --color-orange: oklch(0.70 0.16 50);
+  --color-orange-foreground: oklch(1 0 0);
+}
+
+:root {
+  /* GEOMETRY: Subtle rounded corners - almost square */
+  --radius: 0.25rem; /* 4px - very subtle rounding */
+  
+  /* ============================================ */
+  /* BRAND COLORS - Monster.com Inspired          */
+  /* Royal Purple + Tiffany Blue                  */
+  /* ============================================ */
+  
+  /* Primary: Royal Purple #6E46AE */
+  --primary: oklch(0.48 0.16 290);
+  --primary-foreground: oklch(1 0 0);
+  
+  /* Secondary: Tiffany Blue / Cyan #00B6B4 */
+  --secondary: oklch(0.68 0.12 190);
+  --secondary-foreground: oklch(1 0 0);
+  
+  /* Accent: Tiffany Blue (for CTAs and icons) */
+  --accent: oklch(0.68 0.12 190);
+  --accent-foreground: oklch(1 0 0);
+  
+  /* Tiffany Blue explicit */
+  --tiffany: oklch(0.68 0.12 190);
+  --tiffany-foreground: oklch(1 0 0);
+  
+  /* Purple Dark - Hero backgrounds (like Monster's dark purple) #2D2241 */
+  --purple-dark: oklch(0.22 0.08 290);
+  --purple-dark-foreground: oklch(1 0 0);
+  
+  /* Purple Light - Soft backgrounds */
+  --purple-light: oklch(0.95 0.03 290);
+  --purple-light-foreground: oklch(0.48 0.16 290);
+  
+  /* Tiffany Light - Soft teal backgrounds */
+  --tiffany-light: oklch(0.95 0.04 190);
+  --tiffany-light-foreground: oklch(0.55 0.12 190);
+
+  /* ============================================ */
+  /* NEUTRAL COLORS                               */
+  /* ============================================ */
+  
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.23 0.03 255);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.23 0.03 255);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.23 0.03 255);
+
+  --muted: oklch(0.97 0.005 250);
+  --muted-foreground: oklch(0.55 0.02 250);
+
+  --border: oklch(0.90 0.01 250);
+  --input: oklch(0.90 0.01 250);
+  --ring: oklch(0.48 0.16 290);
+
+  /* ============================================ */
+  /* CATEGORY BADGE COLORS (Monster.com style)    */
+  /* ============================================ */
+  
+  /* Teal/Cyan - Assessments */
+  --info: oklch(0.68 0.12 190);
+  --info-foreground: oklch(1 0 0);
+  
+  /* Yellow/Gold - Jobs */
+  --warning: oklch(0.82 0.14 85);
+  --warning-foreground: oklch(0.25 0.05 85);
+  
+  /* Green - Resume */
+  --success: oklch(0.65 0.16 155);
+  --success-foreground: oklch(1 0 0);
+  
+  /* Coral/Red - Interview */
+  --coral: oklch(0.65 0.16 25);
+  --coral-foreground: oklch(1 0 0);
+  
+  /* Error - Destructive */
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --error: oklch(0.55 0.22 25);
+  --error-foreground: oklch(1 0 0);
+  
+  /* Orange */
+  --orange: oklch(0.70 0.16 50);
+  --orange-foreground: oklch(1 0 0);
+
+  /* ============================================ */
+  /* CHART COLORS                                 */
+  /* ============================================ */
+  --chart-1: oklch(0.48 0.16 290);
+  --chart-2: oklch(0.68 0.12 190);
+  --chart-3: oklch(0.65 0.16 155);
+  --chart-4: oklch(0.82 0.14 85);
+  --chart-5: oklch(0.65 0.16 25);
+
+  /* ============================================ */
+  /* SIDEBAR                                      */
+  /* ============================================ */
+  --sidebar: oklch(0.99 0.003 250);
+  --sidebar-foreground: oklch(0.23 0.03 255);
+  --sidebar-primary: oklch(0.48 0.16 290);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.03 290);
+  --sidebar-accent-foreground: oklch(0.48 0.16 290);
+  --sidebar-border: oklch(0.90 0.01 250);
+  --sidebar-ring: oklch(0.48 0.16 290);
+}
+
+.dark {
+  --background: oklch(0.15 0.02 250);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.20 0.02 250);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.20 0.02 250);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.60 0.16 290);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.72 0.12 190);
+  --secondary-foreground: oklch(0.15 0.05 190);
+  --accent: oklch(0.72 0.12 190);
+  --accent-foreground: oklch(0.15 0.05 190);
+  --tiffany: oklch(0.72 0.12 190);
+  --tiffany-foreground: oklch(0.15 0.05 190);
+  --purple-dark: oklch(0.15 0.06 290);
+  --purple-dark-foreground: oklch(1 0 0);
+  --purple-light: oklch(0.30 0.08 290);
+  --purple-light-foreground: oklch(0.85 0.08 290);
+  --tiffany-light: oklch(0.30 0.06 190);
+  --tiffany-light-foreground: oklch(0.85 0.08 190);
+  --muted: oklch(0.30 0.02 250);
+  --muted-foreground: oklch(0.65 0.02 250);
+  --destructive: oklch(0.60 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --error: oklch(0.60 0.22 25);
+  --error-foreground: oklch(1 0 0);
+  --success: oklch(0.65 0.16 155);
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.78 0.14 85);
+  --warning-foreground: oklch(0.20 0.05 85);
+  --info: oklch(0.72 0.12 190);
+  --info-foreground: oklch(1 0 0);
+  --coral: oklch(0.60 0.16 25);
+  --coral-foreground: oklch(1 0 0);
+  --orange: oklch(0.65 0.16 50);
+  --orange-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.60 0.16 290);
+  --chart-1: oklch(0.60 0.16 290);
+  --chart-2: oklch(0.72 0.12 190);
+  --chart-3: oklch(0.65 0.16 155);
+  --chart-4: oklch(0.78 0.14 85);
+  --chart-5: oklch(0.60 0.16 25);
+  --sidebar: oklch(0.20 0.02 250);
+  --sidebar-foreground: oklch(0.98 0.005 250);
+  --sidebar-primary: oklch(0.60 0.16 290);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.30 0.08 290);
+  --sidebar-accent-foreground: oklch(0.98 0.005 250);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.60 0.16 290);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
